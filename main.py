@@ -2,7 +2,11 @@ import os
 
 def main():
     command = None
-    aura = 0
+    try:
+        aura = load_aura()
+    except FileNotFoundError:
+        save_aura(0)
+        aura = load_aura()
     price = 3
 
     while True:
@@ -16,6 +20,7 @@ def main():
             if aura >= price:
                 print(f"{print_aura(aura)}")
                 aura -= price
+                save_aura(aura)
                 input(f"{print_aura(aura)}\n:)\n")
             else:
                 input(f"{print_aura(aura)}\n:(\n")
@@ -26,6 +31,7 @@ def main():
             else:
                 print(f"{print_aura(aura)}")
                 aura += 1
+                save_aura(aura)
                 input(f"{print_aura(aura)}\n")
         elif command == "?":
             input("help page")
@@ -44,5 +50,15 @@ def print_aura(aura):
         else:
             bar.append(" ")
     return(bar)
+
+def save_aura(var):                      
+    with open('aura.txt', 'w') as file:
+        file.write(str(var))
+
+def load_aura():
+    with open('aura.txt', 'r') as file:
+        loaded_str = file.read()
+        return int(loaded_str)
+
 
 main()
