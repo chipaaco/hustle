@@ -2,8 +2,6 @@
 
 Ultra complex productivity (CLI) tool, you'll waste more time on this than doing real work.
 
-            input(f"track tasks to earn leisure. {price} useful = 1 reward.\n1: useful (+1 aura)\n0: leisure (-{price} aura)\n$: aura points\n?: help\nq: quit\n")
-
 ```
 :'=
 hustle
@@ -40,4 +38,17 @@ hustle
 ['1', '1', '1', ' ', ' ', ' ']
 [' ', ' ', ' ', ' ', ' ', ' ']
 :)
+```
+
+```
+install
+
+git clone <this repo url>
+
+run the script inside the project folder to add it to your path.
+
+chmod +x install.sh
+./install.sh
+
+hustle
 ```
