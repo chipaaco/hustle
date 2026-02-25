@@ -11,7 +11,7 @@ def main():
 
     while True:
         os.system("clear")
-        print(":'=\nhustle")
+        print(":'=\nhustle (? for help)")
         command = input("* ")
         if command == "$":
             input(f"{print_aura(aura)}\n")
@@ -34,7 +34,7 @@ def main():
                 save_aura(aura)
                 input(f"{print_aura(aura)}\n")
         elif command == "?":
-            input("help page")
+            input(f"track tasks to earn leisure. {price} useful = 1 reward.\n1: useful (+1 aura)\n0: leisure (-{price} aura)\n$: aura points\n?: help\nq: quit\n")
         elif command == "q":
             os.system("clear")
             break
